@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  sessions  Session[]
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// 塔罗牌模型
+model TarotCard {
+  id          String   @id @default(cuid())
+  name        String   // 牌名
+  nameEn      String   // 英文名
+  number      Int      // 编号（0-21为大阿尔卡那，其他为小阿尔卡那）
+  type        CardType // 牌类型
+  suit        Suit?    // 花色（仅小阿尔卡那）
+  description String   // 牌面描述
+  image       String   // 牌面图片路径
+  uprightMeaning   String // 正位含义
+  reversedMeaning  String // 逆位含义
+  loveMeaning      String // 爱情含义
+  careerMeaning    String // 事业含义
+  healthMeaning    String // 健康含义
+  
+  sessionCards SessionCard[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 牌阵模型
+model Spread {
+  id          String   @id @default(cuid())
+  name        String   // 牌阵名称
+  description String   // 牌阵描述
+  cardCount   Int      // 牌数
+  category    String   // 分类（爱情、事业、每日指引等）
+  positions   Json     // 牌位信息（名称、含义等）
+  isPopular   Boolean  @default(false) // 是否为精选推荐
+  
+  sessions    Session[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 占卜会话模型
+model Session {
+  id          String   @id @default(cuid())
+  spreadId    String
+  userId      String?
+  question    String?  // 用户问题
+  readingStyle String  @default("gentle") // 解读风格（gentle, spiritual, direct）
+  status      SessionStatus @default(ACTIVE)
+  
+  spread      Spread   @relation(fields: [spreadId], references: [id])
+  user        User?    @relation(fields: [userId], references: [id])
+  cards       SessionCard[]
+  aiReading   String?  // AI解读结果
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 会话中的牌
+model SessionCard {
+  id          String   @id @default(cuid())
+  sessionId   String
+  cardId      String
+  position    Int      // 在牌阵中的位置
+  isReversed  Boolean  @default(false) // 是否逆位
+  
+  session     Session  @relation(fields: [sessionId], references: [id])
+  card        TarotCard @relation(fields: [cardId], references: [id])
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 枚举类型
+enum CardType {
+  MAJOR_ARCANA   // 大阿尔卡那
+  MINOR_ARCANA   // 小阿尔卡那
+}
+
+enum Suit {
+  WANDS      // 权杖
+  CUPS       // 圣杯
+  SWORDS     // 宝剑
+  PENTACLES  // 星币
+}
+
+enum SessionStatus {
+  ACTIVE     // 进行中
+  COMPLETED  // 已完成
+  ARCHIVED   // 已归档
+}

@@ -1,0 +1,22 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "functions": {
+    "server.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "DATABASE_URL": "@database-url",
+    "NEXTAUTH_URL": "@nextauth-url",
+    "NEXTAUTH_SECRET": "@nextauth-secret"
+  },
+  "build": {
+    "env": {
+      "DATABASE_URL": "@database-url"
+    }
+  }
+}

@@ -1,0 +1,402 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-dancing: var(--font-dancing-script);
+  --font-playfair: var(--font-playfair-display);
+  --font-great-vibes: var(--font-great-vibes);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #0D0B1E;
+  --foreground: #FFFFFF;
+  --card: #1F2235;
+  --card-foreground: #FFFFFF;
+  --popover: #1F2235;
+  --popover-foreground: #FFFFFF;
+  --primary: #E3C565;
+  --primary-foreground: #0D0B1E;
+  --secondary: #3E1E68;
+  --secondary-foreground: #FFFFFF;
+  --muted: #3E1E68;
+  --muted-foreground: #AAAAAA;
+  --accent: #0099CC;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --border: #3E1E68;
+  --input: #1F2235;
+  --ring: #E3C565;
+  --chart-1: #E3C565;
+  --chart-2: #0099CC;
+  --chart-3: #8B5CF6;
+  --chart-4: #EC4899;
+  --chart-5: #10B981;
+  --sidebar: #1F2235;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #3E1E68;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3E1E68;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3E1E68;
+  --sidebar-ring: #E3C565;
+}
+
+.dark {
+  --background: #0D0B1E;
+  --foreground: #FFFFFF;
+  --card: #1F2235;
+  --card-foreground: #FFFFFF;
+  --popover: #1F2235;
+  --popover-foreground: #FFFFFF;
+  --primary: #E3C565;
+  --primary-foreground: #0D0B1E;
+  --secondary: #3E1E68;
+  --secondary-foreground: #FFFFFF;
+  --muted: #3E1E68;
+  --muted-foreground: #AAAAAA;
+  --accent: #0099CC;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --border: #3E1E68;
+  --input: #1F2235;
+  --ring: #E3C565;
+  --chart-1: #E3C565;
+  --chart-2: #0099CC;
+  --chart-3: #8B5CF6;
+  --chart-4: #EC4899;
+  --chart-5: #10B981;
+  --sidebar: #1F2235;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #3E1E68;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3E1E68;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3E1E68;
+  --sidebar-ring: #E3C565;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 塔罗牌主题字体 */
+@layer utilities {
+  .font-dancing-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-playfair-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-great-vibes {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+/* 塔罗牌装饰元素 */
+@layer utilities {
+  .tarot-border {
+    background-image: 
+      linear-gradient(45deg, #E3C565 25%, transparent 25%), 
+      linear-gradient(-45deg, #E3C565 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #E3C565 75%), 
+      linear-gradient(-45deg, transparent 75%, #E3C565 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+  
+  .mystical-glow {
+    box-shadow: 
+      0 0 30px rgba(227, 197, 101, 0.3),
+      0 0 60px rgba(227, 197, 101, 0.1),
+      inset 0 0 30px rgba(227, 197, 101, 0.1),
+      0 0 20px rgba(0, 153, 204, 0.2);
+  }
+  
+  .tarot-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, #E3C565 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, #0099CC 2px, transparent 2px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+  }
+}
+
+/* 星空背景效果 */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.stars-bg {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #E3C565, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(227, 197, 101, 0.5), transparent),
+    radial-gradient(1px 1px at 90px 40px, #FFFFFF, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 153, 204, 0.5), transparent),
+    radial-gradient(2px 2px at 160px 30px, #AAAAAA, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* 卡牌悬浮效果 */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 神秘符号装饰 */
+.mystical-symbols::before {
+  content: "✦ ✧ ✦ ✧ ✦";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #E3C565;
+  font-size: 14px;
+  letter-spacing: 8px;
+  opacity: 0.8;
+}
+
+.mystical-symbols::after {
+  content: "✧ ✦ ✧ ✦ ✧";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0099CC;
+  font-size: 14px;
+  letter-spacing: 8px;
+  opacity: 0.8;
+}
+
+/* 按钮悬停效果 */
+.btn-mystical {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-mystical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(227, 197, 101, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-mystical:hover::before {
+  left: 100%;
+}
+
+/* 卡片翻转效果 */
+.card-flip {
+  perspective: 1000px;
+}
+
+.card-flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-flip.flipped .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-flip-front, .card-flip-back {
+  backface-visibility: hidden;
+}
+
+.card-flip-back {
+  transform: rotateY(180deg);
+}
+
+/* 渐变文字效果 */
+.gradient-text {
+  background: linear-gradient(135deg, #E3C565, #0099CC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .mystical-symbols::before,
+  .mystical-symbols::after {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+  
+  .floating {
+    animation-duration: 3s;
+  }
+}
+
+/* 深色主题滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F2235;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3E1E68;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E3C565;
+}
+
+/* 加载动画 */
+@keyframes mystical-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mystical-loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #3E1E68;
+  border-top: 4px solid #E3C565;
+  border-radius: 50%;
+  animation: mystical-spin 1s linear infinite;
+}
+
+/* 打字机效果 */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end);
+}
+
+/* 脉冲效果 */
+@keyframes mystical-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.mystical-pulse {
+  animation: mystical-pulse 2s ease-in-out infinite;
+}
+
+/* 卡牌翻转动画 */
+@keyframes card-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.animate-card-flip {
+  animation: card-flip 0.6s ease-in-out;
+}
+
+/* 抽牌动画 */
+@keyframes card-draw {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-card-draw {
+  animation: card-draw 0.8s ease-in-out;
+}
+
+/* 洗牌动画 */
+@keyframes shuffle {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(10px) rotate(5deg);
+  }
+}
+
+.animate-shuffle {
+  animation: shuffle 0.3s ease-in-out infinite;
+}
