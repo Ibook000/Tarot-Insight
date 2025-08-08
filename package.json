@@ -3,14 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --exec \"npx tsx server.ts\" --watch server.ts --watch src --ext ts,tsx,js,jsx 2>&1 | tee dev.log",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production tsx server.ts 2>&1 | tee server.log",
-    "lint": "next lint",
-    "db:push": "prisma db push",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:reset": "prisma migrate reset"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

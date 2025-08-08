@@ -3,20 +3,14 @@
   "outputDirectory": ".next",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "functions": {
-    "server.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "env": {
-    "DATABASE_URL": "@database-url",
-    "NEXTAUTH_URL": "@nextauth-url",
-    "NEXTAUTH_SECRET": "@nextauth-secret"
-  },
-  "build": {
-    "env": {
-      "DATABASE_URL": "@database-url"
-    }
-  }
+  "framework": "nextjs"
 }
+
+# 初始化git仓库（如果还没做）
+git init
+git add .
+git commit -m "Initial commit for tarot app"
+
+# 推送到GitHub
+git remote add origin https://github.com/Ibook000/Tarot-Insight
+git push -u origin main
