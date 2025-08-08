@@ -158,13 +158,17 @@ export default function CardDetailPage() {
             </Link>
             <div className="text-center">
               <div className="mystical-symbols relative inline-block mb-2">
-                <h1 className="text-3xl font-bold text-[#FFFFFF] font-dancing-script">
+                <h1 className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-4 font-mystical">
                   {card.name}
                 </h1>
+                <h2 className="text-2xl text-[#E3C565] font-divination mb-2">
+                  {card.nameEn}
+                </h2>
               </div>
-              <p className="text-[#AAAAAA]">
-                {card.nameEn} • {card.type === "MAJOR_ARCANA" ? "大阿尔卡那" : "小阿尔卡那"}
-                {card.suit && ` • ${card.suit === "WANDS" ? "权杖" : card.suit === "CUPS" ? "圣杯" : card.suit === "SWORDS" ? "宝剑" : "星币"}`}
+              <p className="text-lg text-[#E3C565] font-ancient">
+                {card.type === "MAJOR_ARCANA" ? "Major Arcana" : "Minor Arcana"} 
+                {card.suit && ` · ${card.suit === "WANDS" ? "Wands" : card.suit === "CUPS" ? "Cups" : card.suit === "SWORDS" ? "Swords" : "Pentacles"}`}
+                {card.number && ` · No.${card.number}`}
               </p>
             </div>
             <div className="w-20"></div>
@@ -183,16 +187,16 @@ export default function CardDetailPage() {
                 <div className="relative w-full h-full">
                   <img 
                     src={card.image} 
-                    alt={card.name}
+                    alt={`${card.name} - ${card.nameEn}`}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none'
                       e.currentTarget.parentElement!.innerHTML = `
                         <div class="w-full h-full bg-gradient-to-br from-[#3E1E68] to-[#1F2235] flex items-center justify-center text-white font-bold text-lg">
                           <div class="text-center p-4">
-                            <div class="text-sm mb-2">${card.nameEn}</div>
-                            <div class="text-lg">${card.name}</div>
-                            ${card.type === "MAJOR_ARCANA" ? `<div class="text-xs mt-2 opacity-75">#${card.number}</div>` : ''}
+                            <div class="text-sm mb-2 font-mystical">${card.nameEn}</div>
+                            <div class="text-lg font-divination">${card.name}</div>
+                            ${card.type === "MAJOR_ARCANA" ? `<div class="text-xs mt-2 opacity-75 font-ancient">#${card.number}</div>` : ''}
                           </div>
                         </div>
                       `
@@ -210,44 +214,44 @@ export default function CardDetailPage() {
             <Button
               onClick={toggleReversed}
               variant="outline"
-              className="mb-6 border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 hover:text-[#FFFFFF] px-6 py-3"
+              className="mb-6 border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 hover:text-[#FFFFFF] px-6 py-3 font-divination"
             >
               <RotateCcw className="w-5 h-5 mr-2" />
-              切换正逆位
+              Toggle Position
             </Button>
 
             {/* 关键信息 */}
             <div className="w-full space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-[#AAAAAA]">类型：</span>
-                <Badge variant="secondary" className="bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30">
-                  {card.type === "MAJOR_ARCANA" ? "大阿尔卡那" : "小阿尔卡那"}
+                <span className="text-[#AAAAAA] font-ancient">Type:</span>
+                <Badge variant="secondary" className="bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30 font-divination">
+                  {card.type === "MAJOR_ARCANA" ? "Major Arcana" : "Minor Arcana"}
                 </Badge>
               </div>
               {card.suit && (
                 <div className="flex justify-between items-center">
-                  <span className="text-[#AAAAAA]">花色：</span>
-                  <Badge variant="outline" className="border-[#3E1E68] text-[#E3C565]">
-                    {card.suit === "WANDS" ? "权杖" : card.suit === "CUPS" ? "圣杯" : card.suit === "SWORDS" ? "宝剑" : "星币"}
+                  <span className="text-[#AAAAAA] font-ancient">Suit:</span>
+                  <Badge variant="outline" className="border-[#3E1E68] text-[#E3C565] font-divination">
+                    {card.suit === "WANDS" ? "Wands" : card.suit === "CUPS" ? "Cups" : card.suit === "SWORDS" ? "Swords" : "Pentacles"}
                   </Badge>
                 </div>
               )}
               {card.astrology && (
                 <div className="flex justify-between items-center">
-                  <span className="text-[#AAAAAA]">星座：</span>
-                  <span className="text-[#FFFFFF] font-medium">{card.astrology}</span>
+                  <span className="text-[#AAAAAA] font-ancient">Astrology:</span>
+                  <span className="text-[#FFFFFF] font-medium font-divination">{card.astrology}</span>
                 </div>
               )}
               {card.element && (
                 <div className="flex justify-between items-center">
-                  <span className="text-[#AAAAAA]">元素：</span>
-                  <span className="text-[#FFFFFF] font-medium">{card.element}</span>
+                  <span className="text-[#AAAAAA] font-ancient">Element:</span>
+                  <span className="text-[#FFFFFF] font-medium font-divination">{card.element}</span>
                 </div>
               )}
               {card.numerology && (
                 <div className="flex justify-between items-center">
-                  <span className="text-[#AAAAAA]">数字学：</span>
-                  <span className="text-[#FFFFFF] font-medium">{card.numerology}</span>
+                  <span className="text-[#AAAAAA] font-ancient">Numerology:</span>
+                  <span className="text-[#FFFFFF] font-medium font-divination">{card.numerology}</span>
                 </div>
               )}
             </div>
@@ -257,20 +261,20 @@ export default function CardDetailPage() {
           <div>
             <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50 mystical-glow">
               <CardHeader>
-                <CardTitle className="text-xl text-[#FFFFFF] font-playfair-display">
-                  牌面概述
+                <CardTitle className="text-2xl text-[#FFFFFF] font-mystical">
+                  Sacred Overview
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-[#AAAAAA] leading-relaxed mb-6">
+                <p className="text-[#AAAAAA] leading-relaxed mb-6 font-ancient">
                   {card.description}
                 </p>
                 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-[#FFFFFF] mb-3">关键词：</h4>
+                  <h4 className="font-semibold text-[#FFFFFF] mb-3 font-divination">Keywords:</h4>
                   <div className="flex flex-wrap gap-2">
                     {card.keywords.map((keyword, index) => (
-                      <Badge key={index} variant="outline" className="border-[#3E1E68] text-[#E3C565]">
+                      <Badge key={index} variant="outline" className="border-[#3E1E68] text-[#E3C565] font-divination">
                         {keyword}
                       </Badge>
                     ))}
@@ -278,9 +282,9 @@ export default function CardDetailPage() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-[#FFFFFF] mb-3">当前含义：</h4>
+                  <h4 className="font-semibold text-[#FFFFFF] mb-3 font-divination">Current Meaning:</h4>
                   <div className="bg-[#3E1E68]/30 p-4 rounded-lg border border-[#3E1E68]/50">
-                    <p className="text-[#AAAAAA] leading-relaxed">
+                    <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                       {isReversed ? card.reversedMeaning : card.uprightMeaning}
                     </p>
                   </div>
@@ -293,17 +297,17 @@ export default function CardDetailPage() {
         {/* 详细解读 */}
         <Tabs defaultValue="meanings" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4 bg-[#1F2235]/80 backdrop-blur-sm border border-[#3E1E68]/50">
-            <TabsTrigger value="meanings" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA]">
-              含义解读
+            <TabsTrigger value="meanings" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA] font-divination">
+              Meanings
             </TabsTrigger>
-            <TabsTrigger value="applications" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA]">
-              应用场景
+            <TabsTrigger value="applications" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA] font-divination">
+              Applications
             </TabsTrigger>
-            <TabsTrigger value="symbolism" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA]">
-              象征意义
+            <TabsTrigger value="symbolism" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA] font-divination">
+              Symbolism
             </TabsTrigger>
-            <TabsTrigger value="correspondences" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA]">
-              对应关系
+            <TabsTrigger value="correspondences" className="data-[state=active]:bg-[#3E1E68] data-[state=active]:text-[#FFFFFF] text-[#AAAAAA] font-divination">
+              Correspondences
             </TabsTrigger>
           </TabsList>
 
@@ -311,13 +315,13 @@ export default function CardDetailPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
                 <CardHeader>
-                  <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display flex items-center">
+                  <CardTitle className="text-lg text-[#FFFFFF] font-mystical flex items-center">
                     <Star className="w-5 h-5 mr-2 text-[#E3C565]" />
-                    正位含义
+                    Upright Meaning
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#AAAAAA] leading-relaxed">
+                  <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                     {card.uprightMeaning}
                   </p>
                 </CardContent>
@@ -325,13 +329,13 @@ export default function CardDetailPage() {
 
               <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
                 <CardHeader>
-                  <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display flex items-center">
+                  <CardTitle className="text-lg text-[#FFFFFF] font-mystical flex items-center">
                     <RotateCcw className="w-5 h-5 mr-2 text-red-500" />
-                    逆位含义
+                    Reversed Meaning
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#AAAAAA] leading-relaxed">
+                  <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                     {card.reversedMeaning}
                   </p>
                 </CardContent>
@@ -343,13 +347,13 @@ export default function CardDetailPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
                 <CardHeader>
-                  <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display flex items-center">
+                  <CardTitle className="text-lg text-[#FFFFFF] font-mystical flex items-center">
                     <Heart className="w-5 h-5 mr-2 text-pink-500" />
-                    爱情方面
+                    Love & Relationships
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#AAAAAA] leading-relaxed">
+                  <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                     {card.loveMeaning}
                   </p>
                 </CardContent>
@@ -357,13 +361,13 @@ export default function CardDetailPage() {
 
               <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
                 <CardHeader>
-                  <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display flex items-center">
+                  <CardTitle className="text-lg text-[#FFFFFF] font-mystical flex items-center">
                     <Briefcase className="w-5 h-5 mr-2 text-blue-500" />
-                    事业方面
+                    Career & Ambition
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#AAAAAA] leading-relaxed">
+                  <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                     {card.careerMeaning}
                   </p>
                 </CardContent>
@@ -371,13 +375,13 @@ export default function CardDetailPage() {
 
               <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
                 <CardHeader>
-                  <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display flex items-center">
+                  <CardTitle className="text-lg text-[#FFFFFF] font-mystical flex items-center">
                     <Sun className="w-5 h-5 mr-2 text-yellow-500" />
-                    健康方面
+                    Health & Wellness
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#AAAAAA] leading-relaxed">
+                  <p className="text-[#AAAAAA] leading-relaxed font-ancient">
                     {card.healthMeaning}
                   </p>
                 </CardContent>
@@ -388,8 +392,8 @@ export default function CardDetailPage() {
           <TabsContent value="symbolism" className="space-y-6">
             <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
               <CardHeader>
-                <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display">
-                  象征元素解析
+                <CardTitle className="text-2xl text-[#FFFFFF] font-mystical">
+                  Symbolic Elements
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -397,7 +401,7 @@ export default function CardDetailPage() {
                   {card.symbolism.map((symbol, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#E3C565] rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-[#AAAAAA]">{symbol}</span>
+                      <span className="text-[#AAAAAA] font-ancient">{symbol}</span>
                     </div>
                   ))}
                 </div>
@@ -408,28 +412,28 @@ export default function CardDetailPage() {
           <TabsContent value="correspondences" className="space-y-6">
             <Card className="bg-[#1F2235]/80 backdrop-blur-sm border-[#3E1E68]/50">
               <CardHeader>
-                <CardTitle className="text-lg text-[#FFFFFF] font-playfair-display">
-                  神秘学对应关系
+                <CardTitle className="text-2xl text-[#FFFFFF] font-mystical">
+                  Mystical Correspondences
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {card.astrology && (
                     <div className="flex justify-between items-center py-2 border-b border-[#3E1E68]/30">
-                      <span className="text-[#AAAAAA]">对应星座：</span>
-                      <span className="text-[#FFFFFF] font-medium">{card.astrology}</span>
+                      <span className="text-[#AAAAAA] font-ancient">Astrology:</span>
+                      <span className="text-[#FFFFFF] font-medium font-divination">{card.astrology}</span>
                     </div>
                   )}
                   {card.element && (
                     <div className="flex justify-between items-center py-2 border-b border-[#3E1E68]/30">
-                      <span className="text-[#AAAAAA]">对应元素：</span>
-                      <span className="text-[#FFFFFF] font-medium">{card.element}</span>
+                      <span className="text-[#AAAAAA] font-ancient">Element:</span>
+                      <span className="text-[#FFFFFF] font-medium font-divination">{card.element}</span>
                     </div>
                   )}
                   {card.numerology && (
                     <div className="flex justify-between items-center py-2 border-b border-[#3E1E68]/30">
-                      <span className="text-[#AAAAAA]">数字学意义：</span>
-                      <span className="text-[#FFFFFF] font-medium">{card.numerology}</span>
+                      <span className="text-[#AAAAAA] font-ancient">Numerology:</span>
+                      <span className="text-[#FFFFFF] font-medium font-divination">{card.numerology}</span>
                     </div>
                   )}
                 </div>
@@ -441,7 +445,7 @@ export default function CardDetailPage() {
         {/* 相关推荐 */}
         {relatedCards.length > 0 && (
           <div className="mt-12">
-            <h3 className="text-xl font-bold text-[#FFFFFF] mb-6 font-playfair-display">相关牌面</h3>
+            <h3 className="text-2xl font-bold text-[#FFFFFF] mb-6 font-mystical">Sacred Connections</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedCards.map((relatedCard) => (
                 <Link key={relatedCard.id} href={`/card/${relatedCard.id}`}>
@@ -451,14 +455,14 @@ export default function CardDetailPage() {
                         <div className="w-16 h-24 bg-white rounded-lg overflow-hidden border-2 border-white/30 flex-shrink-0">
                           <img 
                             src={relatedCard.image} 
-                            alt={relatedCard.name}
+                            alt={`${relatedCard.name} - ${relatedCard.nameEn}`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               e.currentTarget.style.display = 'none'
                               e.currentTarget.parentElement!.innerHTML = `
                                 <div class="w-full h-full bg-gradient-to-br from-[#3E1E68] to-[#1F2235] flex items-center justify-center text-white font-bold text-xs">
                                   <div class="text-center p-1">
-                                    <div class="text-xs">${relatedCard.nameEn}</div>
+                                    <div class="text-xs font-divination">${relatedCard.nameEn}</div>
                                   </div>
                                 </div>
                               `
@@ -466,10 +470,10 @@ export default function CardDetailPage() {
                           />
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-[#FFFFFF] text-sm mb-1">{relatedCard.name}</h4>
-                          <p className="text-xs text-[#AAAAAA] mb-2">{relatedCard.nameEn}</p>
-                          <Badge variant="secondary" className="bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30 text-xs">
-                            {relatedCard.type === "MAJOR_ARCANA" ? "大阿尔卡那" : "小阿尔卡那"}
+                          <h4 className="font-semibold text-[#FFFFFF] text-sm mb-1 font-mystical">{relatedCard.name}</h4>
+                          <p className="text-xs text-[#AAAAAA] mb-2 font-divination">{relatedCard.nameEn}</p>
+                          <Badge variant="secondary" className="bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30 text-xs font-divination">
+                            {relatedCard.type === "MAJOR_ARCANA" ? "Major Arcana" : "Minor Arcana"}
                           </Badge>
                         </div>
                       </div>

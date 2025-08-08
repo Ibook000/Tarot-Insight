@@ -9,25 +9,34 @@ export default function Home() {
     {
       id: "love-spread",
       name: "爱情指引",
+      nameEn: "Love Guidance",
       description: "探索你的爱情运势和感情发展",
+      descriptionEn: "Explore your love destiny and relationship development",
       icon: Heart,
       category: "爱情",
+      categoryEn: "Love",
       cardCount: 3
     },
     {
       id: "career-spread", 
       name: "事业发展",
+      nameEn: "Career Development",
       description: "洞察职业发展和工作机遇",
+      descriptionEn: "Gain insights into career growth and work opportunities",
       icon: Briefcase,
       category: "事业",
+      categoryEn: "Career",
       cardCount: 4
     },
     {
       id: "single-card",
       name: "每日指引",
+      nameEn: "Daily Guidance",
       description: "获取今日的能量和指导",
+      descriptionEn: "Receive today's energy and guidance",
       icon: Sun,
       category: "日常",
+      categoryEn: "Daily",
       cardCount: 1
     }
   ]
@@ -49,10 +58,14 @@ export default function Home() {
               <div className="text-5xl mb-6 opacity-80">✦ ✧ ✦ ✧ ✦</div>
             </div>
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-[#E3C565] to-[#FFFFFF] bg-clip-text text-transparent font-dancing-script">
-            塔罗牌占卜
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-[#E3C565] to-[#FFFFFF] bg-clip-text text-transparent font-divination">
+            Mystic Tarot Oracle
           </h1>
-          <p className="text-2xl md:text-3xl mb-12 text-[#AAAAAA] max-w-4xl mx-auto font-playfair-display leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#E3C565] font-mystical">
+            塔罗牌占卜
+          </h2>
+          <p className="text-2xl md:text-3xl mb-12 text-[#AAAAAA] max-w-4xl mx-auto font-ancient leading-relaxed">
+            "Ancient wisdom whispers through sacred cards, revealing the mysteries of your soul's journey."<br/>
             探索内心的智慧，揭示生命的奥秘。通过古老的塔罗牌艺术，为你提供深刻的洞察和指引。
           </p>
           <div className="mystical-symbols relative inline-block mb-12">
@@ -60,9 +73,9 @@ export default function Home() {
           </div>
           <div>
             <Link href="/spreads">
-              <Button size="lg" className="bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:from-[#0088BB] text-[#0D0B1E] text-xl px-12 py-6 rounded-full font-bold shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 font-playfair-display mystical-glow">
+              <Button size="lg" className="bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:from-[#0088BB] text-[#0D0B1E] text-xl px-12 py-6 rounded-full font-bold shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 font-mystical mystical-glow">
                 <Star className="w-6 h-6 mr-3" />
-                快速开始占卜
+                Begin Sacred Reading
               </Button>
             </Link>
           </div>
@@ -76,9 +89,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mystical-symbols relative inline-block mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-10 text-[#FFFFFF] font-playfair-display">
-                关于塔罗牌占卜
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 text-[#FFFFFF] font-mystical">
+                About Mystic Divination
               </h2>
+              <h3 className="text-3xl md:text-4xl font-bold mb-8 text-[#E3C565] font-divination">
+                关于塔罗牌占卜
+              </h3>
             </div>
             <div className="grid md:grid-cols-3 gap-12 mb-16">
               {[
@@ -105,8 +121,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-br from-[#3E1E68] to-[#1F2235] rounded-full flex items-center justify-center mx-auto mb-6 mystical-glow group-hover:shadow-2xl border border-[#E3C565]/30">
                     <item.icon className="w-10 h-10 text-[#E3C565]" />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-[#FFFFFF] font-playfair-display">{item.title}</h3>
-                  <p className="text-[#AAAAAA] text-lg leading-relaxed">
+                  <h3 className="text-2xl font-semibold mb-4 text-[#FFFFFF] font-mystical">{item.title}</h3>
+                  <p className="text-[#AAAAAA] text-lg leading-relaxed font-ancient">
                     {item.description}
                   </p>
                 </div>
@@ -122,11 +138,15 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="mystical-symbols relative inline-block mb-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FFFFFF] font-playfair-display">
-                精选占卜卡组
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FFFFFF] font-mystical">
+                Sacred Tarot Spreads
               </h2>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-[#E3C565] font-divination">
+                精选占卜卡组
+              </h3>
             </div>
-            <p className="text-xl text-[#AAAAAA] max-w-3xl mx-auto font-playfair-display leading-relaxed">
+            <p className="text-xl text-[#AAAAAA] max-w-3xl mx-auto font-ancient leading-relaxed">
+              "Choose your sacred spread and begin your mystical journey of self-discovery."<br/>
               选择适合你需求的牌阵，开始你的塔罗牌之旅
             </p>
           </div>
@@ -144,25 +164,25 @@ export default function Home() {
                       <div className="w-20 h-20 bg-gradient-to-br from-[#3E1E68] to-[#1F2235] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 floating border-2 border-[#E3C565]/30">
                         <Icon className="w-10 h-10 text-[#E3C565]" />
                       </div>
-                      <CardTitle className="text-2xl font-bold text-[#FFFFFF] font-playfair-display mb-2">
-                        {spread.name}
+                      <CardTitle className="text-2xl font-bold text-[#FFFFFF] font-mystical mb-2">
+                        {spread.nameEn || spread.name}
                       </CardTitle>
-                      <CardDescription className="text-[#AAAAAA] text-lg">
-                        {spread.description}
+                      <CardDescription className="text-[#AAAAAA] text-lg font-ancient">
+                        {spread.descriptionEn || spread.description}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="text-center pt-0">
                       <div className="flex justify-center items-center gap-4 text-sm text-[#AAAAAA] mb-6">
-                        <span className="bg-[#3E1E68]/60 px-4 py-2 rounded-full border border-[#E3C565]/30">
-                          {spread.category}
+                        <span className="bg-[#3E1E68]/60 px-4 py-2 rounded-full border border-[#E3C565]/30 font-divination">
+                          {spread.categoryEn || spread.category}
                         </span>
-                        <span className="bg-[#1F2235]/60 px-4 py-2 rounded-full border border-[#0099CC]/30">
-                          {spread.cardCount} 张牌
+                        <span className="bg-[#1F2235]/60 px-4 py-2 rounded-full border border-[#0099CC]/30 font-ancient">
+                          {spread.cardCount} Cards
                         </span>
                       </div>
                       <Link href={`/draw/${spread.id}`}>
-                        <Button className="mt-4 w-full bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:to-[#0088BB] text-[#0D0B1E] font-bold text-lg py-3 font-playfair-display mystical-glow transform hover:scale-105 transition-all duration-300">
-                          开始占卜
+                        <Button className="mt-4 w-full bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:to-[#0088BB] text-[#0D0B1E] font-bold text-lg py-3 font-mystical mystical-glow transform hover:scale-105 transition-all duration-300">
+                          Begin Sacred Reading
                         </Button>
                       </Link>
                     </CardContent>
@@ -174,8 +194,8 @@ export default function Home() {
           
           <div className="text-center mt-16">
             <Link href="/spreads">
-              <Button variant="outline" size="lg" className="border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 hover:text-[#FFFFFF] text-lg px-8 py-4 font-playfair-display rounded-full">
-                查看所有牌阵
+              <Button variant="outline" size="lg" className="border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 hover:text-[#FFFFFF] text-lg px-8 py-4 font-mystical rounded-full">
+                Explore All Sacred Spreads
               </Button>
             </Link>
           </div>
@@ -189,10 +209,10 @@ export default function Home() {
           <div className="mystical-symbols relative inline-block mb-6">
             <div className="text-3xl opacity-80">✦ ✧ ✦ ✧ ✦</div>
           </div>
-          <p className="text-[#AAAAAA] text-xl font-playfair-display mb-4">
-            © 2024 塔罗牌占卜. 让智慧指引你的道路.
+          <p className="text-[#AAAAAA] text-xl font-mystical mb-4">
+            © 2024 Mystic Tarot Oracle. May ancient wisdom guide your path.
           </p>
-          <div className="mt-6 text-[#AAAAAA] text-lg">
+          <div className="mt-6 text-[#AAAAAA] text-lg font-divination">
             ✨ 愿星光照亮你的前程 ✨
           </div>
         </div>

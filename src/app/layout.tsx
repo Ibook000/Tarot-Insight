@@ -14,21 +14,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "塔罗牌占卜 - 探索内心智慧，揭示生命奥秘",
-  description: "通过古老的塔罗牌艺术，结合现代AI技术，为你提供深刻的洞察和指引。探索内心的智慧，揭示生命的奥秘。",
-  keywords: ["塔罗牌", "占卜", "AI解读", "心灵指引", "神秘学", "智慧", "占卜术"],
-  authors: [{ name: "塔罗牌占卜" }],
+  title: "Mystic Tarot Reading - 探索内心智慧，揭示生命奥秘",
+  description: "Ancient wisdom meets modern insight. Through the mystical art of tarot, discover profound revelations and spiritual guidance. 通过古老的塔罗牌艺术，结合现代AI技术，为你提供深刻的洞察和指引。探索内心的智慧，揭示生命的奥秘。",
+  keywords: ["塔罗牌", "Tarot", "占卜", "Divination", "AI解读", "心灵指引", "Spiritual Guidance", "神秘学", "Mysticism", "智慧", "Wisdom"],
+  authors: [{ name: "Mystic Tarot Oracle" }],
   openGraph: {
-    title: "塔罗牌占卜 - 探索内心智慧",
-    description: "通过古老的塔罗牌艺术，结合现代AI技术，为你提供深刻的洞察和指引",
+    title: "Mystic Tarot Reading - Ancient Wisdom & Modern Insight",
+    description: "Discover your destiny through the mystical art of tarot. Ancient wisdom meets modern technology for profound spiritual guidance.",
     url: "https://chat.z.ai",
-    siteName: "塔罗牌占卜",
+    siteName: "Mystic Tarot Oracle",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "塔罗牌占卜 - 探索内心智慧",
-    description: "通过古老的塔罗牌艺术，结合现代AI技术，为你提供深刻的洞察和指引",
+    title: "Mystic Tarot Reading - Ancient Wisdom & Modern Insight",
+    description: "Discover your destiny through the mystical art of tarot. Ancient wisdom meets modern technology.",
   },
 };
 

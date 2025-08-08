@@ -1294,18 +1294,21 @@ export default function CardsPage() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <Button variant="ghost" className="text-[#E3C565] hover:bg-[#3E1E68]/20">
+              <Button variant="ghost" className="text-[#E3C565] hover:bg-[#3E1E68]/20 font-divination">
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                返回首页
+                Return Home
               </Button>
             </Link>
             <div className="text-center">
               <div className="mystical-symbols relative inline-block mb-2">
-                <h1 className="text-3xl font-bold text-[#FFFFFF] font-playfair-display">
-                  塔罗牌总览
-                </h1>
+                <h1 className="text-3xl font-bold text-[#FFFFFF] font-mystical">
+                Sacred Tarot Collection
+              </h1>
+              <h2 className="text-xl text-[#E3C565] font-divination mb-2">
+                塔罗牌总览
+              </h2>
               </div>
-              <p className="text-[#AAAAAA]">探索78张塔罗牌的神秘世界</p>
+              <p className="text-[#AAAAAA] font-ancient">Explore the mystical realm of 78 sacred tarot cards</p>
             </div>
             <div className="w-20"></div>
           </div>
@@ -1318,10 +1321,10 @@ export default function CardsPage() {
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             <div className="flex-1">
               <Input
-                placeholder="搜索牌面名称、英文名或描述..."
+                placeholder="Search by name, English name, or description..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-[#1F2235]/80 border-[#3E1E68]/50 text-[#FFFFFF] placeholder-[#AAAAAA] focus:border-[#E3C565]"
+                className="bg-[#1F2235]/80 border-[#3E1E68]/50 text-[#FFFFFF] placeholder-[#AAAAAA] focus:border-[#E3C565] font-ancient"
               />
             </div>
             <div className="flex gap-2">
@@ -1329,37 +1332,37 @@ export default function CardsPage() {
                 variant={filter === "all" ? "default" : "outline"}
                 onClick={() => setFilter("all")}
                 className={filter === "all" 
-                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold" 
-                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20"
+                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold font-divination" 
+                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 font-divination"
                 }
               >
-                全部
+                All Cards
               </Button>
               <Button
                 variant={filter === "major" ? "default" : "outline"}
                 onClick={() => setFilter("major")}
                 className={filter === "major" 
-                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold" 
-                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20"
+                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold font-divination" 
+                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 font-divination"
                 }
               >
-                大阿尔卡那
+                Major Arcana
               </Button>
               <Button
                 variant={filter === "minor" ? "default" : "outline"}
                 onClick={() => setFilter("minor")}
                 className={filter === "minor" 
-                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold" 
-                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20"
+                  ? "bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] font-bold font-divination" 
+                  : "border-[#3E1E68] text-[#E3C565] hover:bg-[#3E1E68]/20 font-divination"
                 }
               >
-                小阿尔卡那
+                Minor Arcana
               </Button>
             </div>
           </div>
           
-          <div className="text-center text-[#AAAAAA] mb-2">
-            找到 {filteredCards.length} 张牌
+          <div className="text-center text-[#AAAAAA] mb-2 font-ancient">
+            Found {filteredCards.length} sacred cards
           </div>
         </div>
 
@@ -1368,9 +1371,12 @@ export default function CardsPage() {
           <div className="mb-12">
             <div className="flex items-center mb-6">
               <Star className="w-6 h-6 mr-2 text-[#E3C565]" />
-              <h2 className="text-2xl font-bold text-[#FFFFFF] font-playfair-display">
-                精选推荐
+              <h2 className="text-2xl font-bold text-[#FFFFFF] font-mystical">
+                Sacred Selections
               </h2>
+              <h3 className="text-lg text-[#E3C565] font-divination ml-2">
+                精选推荐
+              </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
               {popularCards.map((card) => (
@@ -1403,10 +1409,10 @@ export default function CardsPage() {
                         )}
                       </div>
                       <div className="text-center">
-                        <h3 className="font-semibold text-[#FFFFFF] text-sm mb-1">{card.name}</h3>
-                        <p className="text-xs text-[#AAAAAA]">{card.nameEn}</p>
-                        <Badge variant="secondary" className="mt-2 bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30 text-xs">
-                          {card.type === "MAJOR_ARCANA" ? "大阿尔卡那" : "小阿尔卡那"}
+                        <h3 className="font-semibold text-[#FFFFFF] text-sm mb-1 font-mystical">{card.name}</h3>
+                        <p className="text-xs text-[#AAAAAA] font-divination">{card.nameEn}</p>
+                        <Badge variant="secondary" className="mt-2 bg-[#3E1E68]/60 text-[#E3C565] border border-[#E3C565]/30 text-xs font-divination">
+                          {card.type === "MAJOR_ARCANA" ? "Major Arcana" : "Minor Arcana"}
                         </Badge>
                       </div>
                     </CardContent>
@@ -1419,9 +1425,12 @@ export default function CardsPage() {
 
         {/* 所有牌面 */}
         <div>
-          <h2 className="text-2xl font-bold text-[#FFFFFF] mb-6 font-playfair-display">
-            {searchTerm || filter !== "all" ? "搜索结果" : "所有牌面"}
+          <h2 className="text-2xl font-bold text-[#FFFFFF] mb-6 font-mystical">
+            {searchTerm || filter !== "all" ? "Sacred Search Results" : "Sacred Collection"}
           </h2>
+          <h3 className="text-lg text-[#E3C565] font-divination mb-4">
+            {searchTerm || filter !== "all" ? "搜索结果" : "所有牌面"}
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {filteredCards.map((card) => (
               <Link key={card.id} href={`/card/${card.id}`}>
@@ -1447,8 +1456,8 @@ export default function CardsPage() {
                         />
                       </div>
                       {card.isPopular && (
-                        <Badge className="absolute top-2 right-2 bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] text-xs font-bold">
-                          精选
+                        <Badge className="absolute top-2 right-2 bg-gradient-to-r from-[#E3C565] to-[#0099CC] text-[#0D0B1E] text-xs font-bold font-divination">
+                          Sacred
                         </Badge>
                       )}
                     </div>
@@ -1467,17 +1476,17 @@ export default function CardsPage() {
           
           {filteredCards.length === 0 && (
             <div className="text-center py-12">
-              <div className="text-[#AAAAAA] text-lg mb-4">没有找到匹配的牌面</div>
-              <Button
-                onClick={() => {
-                  setSearchTerm("")
-                  setFilter("all")
-                }}
-                className="bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:to-[#0088BB] text-[#0D0B1E] font-bold"
-              >
-                重置筛选
-              </Button>
-            </div>
+            <div className="text-[#AAAAAA] text-lg mb-4 font-ancient">No sacred cards found matching your search</div>
+            <Button
+              onClick={() => {
+                setSearchTerm("")
+                setFilter("all")
+              }}
+              className="bg-gradient-to-r from-[#E3C565] to-[#0099CC] hover:from-[#D4B555] hover:to-[#0088BB] text-[#0D0B1E] font-bold font-divination"
+            >
+              Reset Search
+            </Button>
+          </div>
           )}
         </div>
       </div>

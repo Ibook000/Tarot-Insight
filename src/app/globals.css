@@ -119,8 +119,39 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    font-family: 'Playfair Display', serif;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  .font-mystical {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+  
+  .font-divination {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  
+  .font-ancient {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.03em;
   }
 }
 
