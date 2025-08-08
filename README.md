@@ -11,10 +11,7 @@
 ### 📺 项目演示
 
 <div align="center">
-  <video src="./video.mp4" width="100%" controls poster="https://tarot-insight.vercel.app/logo.svg">
-    您的浏览器不支持视频播放。点击<a href="./video.mp4">这里</a>下载演示视频。
-  </video>
-  <p><em>🎬 塔罗牌占卜应用完整演示</em></p>
+  <p><em>🎬 塔罗牌占卜应用完整演示="./video.mp4"</em></p>
 </div>
 
 ### 🎯 完整塔罗体验
