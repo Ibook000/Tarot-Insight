@@ -1,141 +1,157 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# 🔮 Tarot Insight - 塔罗牌占卜应用
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ibook000/Tarot-Insight)
 
-## ✨ Technology Stack
+> ✨ **在线体验**：https://tarot-insight.vercel.app
 
-This scaffold provides a robust foundation built with:
+一个优雅、现代的塔罗牌在线占卜应用，内置78张完整塔罗牌，支持多种经典牌阵，响应式设计完美适配所有设备。
 
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## 🌟 核心特性
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+### 🎯 完整塔罗体验
+- **78张完整塔罗牌**：包含22张大阿卡纳和56张小阿卡纳
+- **多种经典牌阵**：单张牌阵、三张牌阵、凯尔特十字等
+- **专业解读**：每张牌配有详细正逆位解读
+- **历史记录**：自动保存占卜记录，随时回顾
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+### 📱 响应式设计
+- **移动优先**：完美适配手机、平板、桌面
+- **触摸优化**：流畅的移动端交互体验
+- **快速加载**：优化的图片和代码，3秒内加载完成
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
+### 🎨 精美界面
+- **现代UI**：简洁优雅的设计风格
+- **动态效果**：流畅的翻牌和过渡动画
+- **塔罗主题**：深色/浅色主题切换
+- **高清卡牌**：精美的塔罗牌插画
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+## 🚀 一键部署
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+### 立即部署（30秒完成）
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ibook000/Tarot-Insight)
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+**部署地址**：https://vercel.com/new/clone?repository-url=https://github.com/Ibook000/Tarot-Insight
 
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
-
+### 本地开发
 ```bash
-# Install dependencies
+# 克隆项目
+git clone https://github.com/Ibook000/Tarot-Insight.git
+cd Tarot-Insight
+
+# 安装依赖
 npm install
 
-# Start development server
+# 启动开发服务器
 npm run dev
 
-# Build for production
+# 构建生产版本
 npm run build
-
-# Start production server
-npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
+## 📋 功能介绍
 
-## 🤖 Powered by Z.ai
+### 🔮 占卜功能
+- **单张占卜**：快速获取今日指引
+- **三张牌阵**：过去-现在-未来时间线解读
+- **爱情牌阵**：专门针对感情问题的牌阵
+- **事业牌阵**：工作、学业相关占卜
 
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
+### 📊 牌阵系统
+- **单张牌阵**：简洁直接的问题解答
+- **三张牌阵**：时间线或问题分析
+- **凯尔特十字**：最完整的10张牌综合占卜
+- **关系牌阵**：双人关系的深度解读
 
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
+### 🎴 塔罗牌库
+- **大阿卡纳**：22张主牌完整收录
+- **小阿卡纳**：56张副牌，包含四花色
+- **详细解读**：每张牌正逆位详细解释
+- **牌意搜索**：快速查找特定牌意
 
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
+## 🛠️ 技术栈
 
-## 📁 Project Structure
+- **框架**：Next.js 15 (App Router)
+- **语言**：TypeScript 5
+- **样式**：Tailwind CSS 4
+- **组件**：Radix UI + Shadcn/ui
+- **部署**：Vercel (零配置)
+- **图标**：Lucide React
+
+## 📁 项目结构
 
 ```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+tarot-insight/
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── cards/        # 塔罗牌展示
+│   │   ├── draw/         # 抽牌页面
+│   │   ├── spreads/      # 牌阵选择
+│   │   └── result/       # 占卜结果
+│   ├── components/       # React组件
+│   └── lib/             # 工具函数
+├── public/
+│   └── cards/           # 塔罗牌图片资源
+├── prisma/              # 数据库schema（已移除依赖）
+└── .github/             # GitHub Actions配置
 ```
 
-## 🎨 Available Features & Components
+## 🎯 快速开始
 
-This scaffold includes a comprehensive set of modern web development tools:
+### 在线使用（推荐）
+1. 访问：https://tarot-insight.vercel.app
+2. 选择牌阵
+3. 开始占卜
+4. 查看详细解读
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+### 本地部署
+1. 点击上方部署按钮
+2. 选择GitHub仓库
+3. 点击"Deploy"
+4. 等待30秒完成部署
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+## 🔗 相关链接
 
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+- **在线体验**：https://tarot-insight.vercel.app
+- **GitHub仓库**：https://github.com/Ibook000/Tarot-Insight
+- **部署教程**：查看 `VERCEL_DEPLOY.md`
+- **问题反馈**：[Issues](https://github.com/Ibook000/Tarot-Insight/issues)
 
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+## 📱 移动端体验
 
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+- **PWA支持**：可安装为桌面应用
+- **离线使用**：支持离线查看已占卜记录
+- **分享功能**：一键分享占卜结果到社交媒体
 
-## 🤝 Get Started with Z.ai
+## 🎨 主题特色
 
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+- **神秘主题**：专为塔罗设计的配色方案
+- **动态背景**：星空和宇宙元素
+- **塔罗字体**：优雅的手写风格字体
+- **交互动画**：流畅的翻牌和切换效果
+
+## 🌙 更新日志
+
+### v1.0.0 (当前版本)
+- ✅ 78张完整塔罗牌
+- ✅ 多种经典牌阵
+- ✅ 响应式设计
+- ✅ 一键Vercel部署
+- ✅ 移动端优化
+
+## 🎭 使用场景
+
+- **日常指引**：每日塔罗抽卡
+- **情感咨询**：爱情关系占卜
+- **事业决策**：工作学业选择
+- **自我探索**：个人成长指引
+- **朋友娱乐**：聚会塔罗游戏
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+<div align="center">
+
+**🔮 开始你的塔罗之旅**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ibook000/Tarot-Insight)
+
+</div>
